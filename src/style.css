@@ -1,0 +1,9 @@
+#logo {
+    width: 100px;
+}
+
+.name {
+    color: blue;
+    display: flex;
+    justify-content: center;
+}
