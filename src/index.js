@@ -2,6 +2,7 @@ import "./style.css";
 import Logo from "./frank.png";
 import menuPage from "./menu.js";
 import homePage from "./home.js";
+import contactPage from "./contact";
 
 
 /* makes the header */
@@ -37,20 +38,46 @@ function header() {
     addEventListeners(home, menu, contact);
 }
 
-/*
-    figure out how to make these work
-*/
 function addEventListeners(home, menu, contact) {
     home.addEventListener("click", handler);
     menu.addEventListener("click", handler);
+    contact.addEventListener("click", handler);
+
+    homePage();
+    let selection = "home";
 
     function handler() {
-        if (this.textContent === "Home") {
-
-        } else if (this.textContent === "Menu") {
-
+        if (this.textContent === "Home" && selection !== "home") {
+            if (selection === "menu") {
+                const menuContent = document.getElementById("menu");
+                menuContent.remove();
+            } else if (selection === "contact") {
+                const contactContent = document.getElementById("contact");
+                contactContent.remove();
+            }
+            homePage();
+            selection = "home";
+        } else if (this.textContent === "Menu" && selection !== "menu") {
+            if (selection === "home") {
+                const homeContent = document.getElementById("home-blurb");
+                homeContent.remove();
+            } else if (selection === "contact") {
+                const contactContent = document.getElementById("contact");
+                contactContent.remove();
+            }
+            menuPage();
+            selection = "menu";
+        } else if (this.textContent === "Contact us" && selection !== "contact") {
+            if (selection === "home") {
+                const homeContent = document.getElementById("home-blurb");
+                homeContent.remove();
+            } else if (selection === "menu") {
+                const menuContent = document.getElementById("menu");
+                menuContent.remove();
+            }
+            contactPage();
+            selection = "contact";
         }
     }
 }
 header();
-homePage();

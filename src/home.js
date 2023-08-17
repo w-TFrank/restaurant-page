@@ -1,7 +1,7 @@
 export default function homePage() {
     const content = document.querySelector("#content");
-    const homeBlurb = document.createElement("h4");
-    homeBlurb.textContent = "Home of the best Franks in the world!";
+    const homeBlurb = document.createElement("p");
+    homeBlurb.innerHTML = "<b>Home of the best Franks in the world</b> Come dine with us!";
     homeBlurb.id = "home-blurb";
     content.appendChild(homeBlurb);
 }
