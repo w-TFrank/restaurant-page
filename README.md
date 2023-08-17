@@ -1,0 +1,1 @@
+This is the first project I've made using webpack. I learned a lot about how it all works. I feel more comfortable now using it, and I feel more comfortable with linking javascript files together. Also in this project, all of the HTML was written with javascript, so I got more practice and knowledge with manipulating the DOM.

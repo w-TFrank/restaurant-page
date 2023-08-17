@@ -43,9 +43,14 @@ function addEventListeners(home, menu, contact) {
     menu.addEventListener("click", handler);
     contact.addEventListener("click", handler);
 
+    //loads screen to the homepage
     homePage();
     let selection = "home";
 
+    /* 
+     * handles how the buttons work. makes sure the same content isn't loaded more
+     * than once.
+     */
     function handler() {
         if (this.textContent === "Home" && selection !== "home") {
             if (selection === "menu") {
